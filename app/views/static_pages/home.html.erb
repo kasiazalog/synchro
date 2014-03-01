@@ -1,4 +1,15 @@
-<% provide(:title, 'Home') %>
+<% if signed_in? %>
+<div>
+<% render 'shared/user_info' %>
+</div>
+<div>
+<%= render 'shared/micropost_form' %>
+</div>
+<div>
+<h3>Micropost Feed</h3>
+<%= render 'shared/feed' %>
+</div>
+<% else %>
 <h1>My synchro</h1>
 <p>
 	Swim, show your talent, collect your results!
@@ -7,3 +18,4 @@
 	Have fun!
 	<%= link_to "Sign up now!", signup_path %>
 </p>
+<% end %>
