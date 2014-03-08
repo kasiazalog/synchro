@@ -1,8 +1,12 @@
 <% provide(:title, @user.name) %>
 <h1>
 <%= gravatar_for @user %>
-<%= @user.name %>, <%= @user.email %>, <%= @user.club %></h1>
+<%= @user.name %>, <%= @user.club %></h1>
 <div>
+<%= render 'shared/status' %>
+</div>
+<div>
+<% render 'follow_form' if signed_in? %>
 <% if @user.microposts.any? %>
 <h3>Microposts (<%= @user.microposts.count %>)</h3>
 <ol>

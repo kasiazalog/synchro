@@ -1,6 +1,9 @@
 <% if signed_in? %>
 <div>
-<% render 'shared/user_info' %>
+<%= render 'shared/user_info' %>
+</div>
+<div>
+<%= render 'shared/status' %>
 </div>
 <div>
 <%= render 'shared/micropost_form' %>
